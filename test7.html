@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>실습 문제</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .box {
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+    .box1 {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+    }
+    .box2 {
+      width: 150px;
+      height: 200px;
+      background-color: lightgreen;
+    }
+    .box3 {
+      width: 300px;
+      height: 150px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>실습 문제</h1>
+
+  <div id="problem">
+
+    <p>다음 박스 의 width()
+      height() 를 작성하세요.</p>
+    <div class="box box1" id="q1"></div>
+    <button id="btn1">정답 확인</button><br><br>
+
+    <p>다음 박스 의 innerWidth()
+      innerHeight() 작성하세요.</p>
+    <div class="box box2" id="q2"></div>
+    <button id="btn2">정답 확인</button><br><br>
+
+    <p>다음 박스 의 outerWidth()
+      outerHeight() 작성하세요.</p>
+    <div class="box box3" id="q3"></div>
+    <button id="btn3">정답 확인</button><br><br>
+
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#btn1').click(function() {
+        var width = $('#q1').width();
+        var height = $('#q1').height();
+        $('#q1').html("width: " + width + "px" + "<br>"
+        + "height: " + height+ "px");        
+      });
+
+      $('#btn2').click(function() {
+        var innerWidth = $('#q2').innerWidth();
+        var innerHeight = $('#q2').innerHeight();        
+        $('#q2').html("innerWidth: " + innerWidth + "px" + "<br>" +
+        "innerHeight: " + innerHeight + "px");
+      });
+
+      $('#btn3').click(function() {
+        var outerWidth = $('#q3').outerWidth();
+        var outerHeight = $('#q3').outerHeight();
+        $('#q3').html("outerWidth: " + outerWidth + "px" + "<br>"
+        + "outerHeight: " + outerHeight+ "px");
+      });
+    });
+  </script>
+</body>
+</html>

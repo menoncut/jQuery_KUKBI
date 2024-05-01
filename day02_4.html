@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="test1">오늘은 <b>좋은</b> 날 입니다.</p>
+    <p id="test2">추석은 금요일 입니다.</p>
+    <p id="test3">hello world</p>
+    <button id="btn1">Text가져오기</button>
+    <button id="btn2">Html가져오기</button>
+    <button id="btn3">value가져오기</button>
+    <p>이름 : <input type="text" id="t1" value="추석연휴"></p>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn1").on("click", function(){
+                $("#test1").text("행복한 목요일입니다")
+            })
+
+            $("#btn2").on("click", function(){
+                $("#test2").html("일요일은 더 <b>행복한</b> 날 입니다.")
+            })
+
+            //$("#btn3").on("click", function(){
+            //    $("#test3").text("햄복은 추석")
+            //})
+
+            //$("#btn3").on("click", function(){
+            //    $("#t1").val("햄복은 추석되세요")
+            //})
+        })
+
+        document.getElementById("btn3").addEventListener("click", function(){
+            document.getElementById("test3").innerHTML = "happy holiday"
+        })
+
+        document.getElementById("btn3").addEventListener("click", function(){
+            document.getElementById("t1").value = "happy holiday"
+        })
+
+    </script>
+
+</body>
+</html>

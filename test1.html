@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery 이벤트 예제</title>
+ 
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      margin-bottom: 20px;
+    }
+  </style>
+  <script src="libs/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<p>박스 1을 클릭하면 "박스 1이 클릭되었습니다!"라는 경고창이 나타나도록 작성하세요.</p>
+<div class="box" id="box1"></div>
+
+<p>박스 2를 더블클릭하면 "박스 2가 더블클릭되었습니다!"라는 경고창이 나타나도록 작성하세요.</p>
+<div class="box" id="box2"></div>
+
+<p>입력 필드에 키를 누르면 "키가 눌렸습니다! 눌린 키 코드: (눌린 키 코드)"라는 경고창이 나타나도록 작성하세요.</p>
+<input type="text" id="inputField">
+
+<p>폼을 제출하면 "이름: (입력한 이름) 이메일: (입력한 이메일)"이라는 경고창이 나타나도록 작성하세요.</p>
+<form id="myForm">
+  <input type="text" name="name" placeholder="이름">
+  <input type="email" name="email" placeholder="이메일">
+  <input type="submit" value="제출">
+</form>
+
+<p>포커스가 폼 머물때 색을 노란색, 떠나면 파란색으로 변경해주세요</p>
+<form id="myForm">
+  <input type="text" name="name" placeholder="학교">
+  <input type="email" name="email" placeholder="주소">
+  <input type="submit3" value="제출">
+</form>
+<script>
+    $(document).ready(function(){
+      //$("#box1").on("click", function(){
+        //alert("박스 1 클릭")
+      //})
+
+      //$("#box2").dblclick(function(){
+      //  alert("박스 2가 더블 클릭됨")
+      //})
+
+      $("#inputField").keydown(function(e){
+        alert("키가 눌렸습니다")
+        alert("눌린 키 코드 : " + parseInt(e.keyCode))
+      })
+
+      //var name = $("input[type='text1']").val();
+      //var email = $("input[type='email2']").val();
+      //$("input[type='submit']").click(function(){
+      //  alert("hi");
+      //  alert("이름 : " + $("input[name='name']").val());
+      //  alert("이메일 : " + $("input[name='email']").val());
+      //});
+
+      //$("input").mouseenter(function(){
+      //  $(this).css("background-color" , "yellow")
+      //})
+      //$("input").mouseleave(function(){
+      //  $(this).css("background-color" , "blue")
+      //})
+    });
+</script>
+</body>
+</html>

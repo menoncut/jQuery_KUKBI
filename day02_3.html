@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>    
+</head>
+<body>
+    <p id="test">오늘은 <b>좋은</b> 날 입니다.</p>
+    <button id="btn1">Text가져오기</button>
+    <button id="btn2">Html가져오기</button>
+    <button id="btn3">value가져오기</button>
+    <p>이름 : <input type="text" id="t1" value="추석연휴"></p>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").on("click", function(){
+                alert("Text : " + $("#test").text())
+            })
+
+            $("#btn2").on("click", function(){
+                alert("Html : " + $("#test").html())
+            })
+            
+            //$("#btn3").on("click", function(){
+            //    alert("value : " + $("#t1").val())
+            //})
+
+        })
+
+        document.getElementById("btn3").addEventListener("click",function(){
+            alert("value : " + document.getElementById("t1").value)
+        })
+    </script>
+</body>
+</html>

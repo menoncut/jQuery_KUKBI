@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+    <style>
+        #div1{
+            width: 300px;
+            height: 200px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid #000;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+
+    <p style="background-color: aqua; color:#f00;">월요일</p>
+    <p style="background-color: #f00;">화요일</p>
+    <p style="background-color: blue;">수요일</p>
+    
+    <button id="btn1">요소의 색상을 가져옵니다</button>
+    <button id="btn2">요소의 색상을 적용합니다</button>
+    <button id="btn3">div 사이즈 체크</button>
+    <button id="btn4">div 사이즈 변경</button>
+    
+    <script>
+        $(document).ready(function(){
+            $("#btn1").on("click", function(){
+                //alert("바탕색 컬러: " + $("p:nth-child(2)")
+                //.css("background-color"))
+                alert("바탕색 컬러: " + $("p:eq(2)")
+                .css("background-color"))
+                alert("폰트 컬러: " + $("p:eq(0)")
+                .css("color"))
+            })
+
+            $("#btn2").on("click", function(){
+                $("p").css("background-color", "#ccc")
+                $("p").css("color", "#f00")
+            })
+
+            $("#btn3").on("click", function(){
+                let $w = $("w");
+                let $h = $("h");
+                //$w += "width: " + $("#div1").width() + "<br>";
+                //$h += "height: " + $("#div1").height() + "<br>";
+
+                //$w += "width: " + $("#div1").innerWidth() + "<br>";
+                //$h += "height: " + $("#div1").innerHeight() + "<br>";
+
+                $w += "width: " + $("#div1").outerWidth() + "<br>";
+                $h += "height: " + $("#div1").outerHeight() + "<br>";
+                $("#div1").html($w+$h);
+            })
+
+            $("#btn4").on("click", function(){
+                $("#div1").width(500).height(500)
+            })
+        })
+    </script>
+</body>
+</html>

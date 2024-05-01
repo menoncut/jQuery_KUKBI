@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+    <style>
+        #flip, #panel{
+            padding: 5px;
+            text-align: center;
+            background-color: beige;
+            border: 1px solid #000;
+        }
+        #panel{
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery 효과</h1>
+    <p>오늘도 행복한 날입니다.</p>
+
+    <div>
+        오늘은 목요일입니다
+    </div>
+
+    <div id="div1" style="width: 80px;height: 80px; display: block;background-color:red"></div>
+    <div id="div2" style="width: 80px;height: 80px; display: block;background-color:green"></div>
+    <div id="div3" style="width: 80px;height: 80px; display: block;background-color:blue;position:absolute"></div>  
+    <div id="flip">flip</div>
+    <div id="panel">panel</div>
+   
+
+    <button id="hide">숨기기</button>
+    <button id="show">나타내기</button>
+    <button id="toggle">토글</button>
+    <button id="fadein">fadein</button>
+    <button id="fadeout">fadeout</button>
+    <button id="fadetoggle">fade toggle</button>
+    <button id="anim">anim</button>
+
+    <script>
+        
+        $(document).ready(function(){
+            
+            //$("#fadein").click(function(){
+            //    $("#div1").fadeIn()
+            //    $("#div2").fadeIn("slow")
+            //    $("#div3").fadeIn(3000)
+            //})
+            
+            //$("#fadeout").click(function(){
+            //    $("#div1").fadeOut()
+            //    $("#div2").fadeOut("slow")
+            //    $("#div3").fadeOut(3000)
+            //})
+
+            //$("#flip").on("click", function(){
+            //    $("#panel").slideDown()
+            //})
+            $("#flip").on("click", function(){
+                $("#panel").slideToggle()
+            })
+            //$("#panel").on("click", function(){
+                //    $(this).slideUp()
+                //})
+                
+                
+                $("#anim").on("click", function(){
+                    $("#div3").fadeToggle(2000).animate({
+                        left: '250px',
+                        width: '300px'
+                    }).css({
+                        background: 'aqua'
+                    })
+                })
+
+
+
+            
+            $("#fadetoggle").click(function(){
+                $("#div1").fadeToggle()
+                $("#div2").fadeToggle("slow")
+                $("#div3").fadeToggle(3000)
+            })
+
+
+
+
+
+
+            //$("#fade").click(function(){
+            //    $("#div1").css({
+            //        width: '260px',
+            //        height: '160px',
+            //        display: 'block',
+            //        background: 'green'
+            //    })              
+            //})
+
+
+
+
+
+            $("#hide").click(function(){
+                $("p").hide(1000);
+            })
+            $("#show").click(function(){
+                $("p").show(2000);
+            })
+            $("#toggle").click(function(){
+                $("p").toggle(1000);
+            })
+        })
+    </script>
+</body>
+</html>

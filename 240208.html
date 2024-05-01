@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 효과 실습</title>
+  <script src="libs/jquery-3.7.1.min.js"></script>
+  <style>
+    #fadeDiv{
+      display: none;
+    }
+    #slideDiv{
+      display: none;
+    }
+    #chainingDiv{
+      display: none;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <h2>문제 1: 숨기기/표시</h2>
+  <button id="toggleButton">숨기기/표시</button>
+  <div id="toggleDiv">이것은 숨기기/표시 예제입니다.</div>
+
+  <h2>문제 2: 페이드</h2>
+  <button id="fadeInButton">페이드 인</button>
+  <button id="fadeOutButton">페이드 아웃</button>
+  <div id="fadeDiv">이것은 페이드 예제입니다.</div>
+
+  <h2>문제 3: 슬라이드</h2>
+  <button id="slideDownButton">슬라이드 다운</button>
+  <button id="slideUpButton">슬라이드 업</button>
+  <div id="slideDiv">이것은 슬라이드 예제입니다.</div>
+
+  <h2>문제 4: 애니메이션</h2>
+  <button id="animateButton">애니메이션 시작</button>
+  <div id="animateDiv">이것은 애니메이션 예제입니다.</div>
+
+  <h2>문제 5: 중지()</h2>
+  <button id="startAnimationButton">애니메이션 시작</button>
+  <button id="stopAnimationButton">애니메이션 중지</button>
+  <div id="stopDiv">이것은 중지() 예제입니다.</div>
+
+  <h2>문제 6: 콜백</h2>
+  <button id="callbackButton">클릭하세요</button>
+  <div id="callbackDiv">이것은 콜백 예제입니다.</div>
+
+  <h2>문제 7: 체이닝</h2>
+  <button id="chainingButton">클릭하세요</button>
+  <div id="chainingDiv">이것은 체이닝 예제입니다.</div>
+
+  <script>
+    $(document).ready(function(){
+      $("#toggleButton").on("click", function(){
+        $("#toggleDiv").hide()
+      })
+      
+      $("#fadeInButton").on("click", function(){
+        $("#fadeDiv").fadeIn()
+      })
+      $("#fadeOutButton").on("click", function(){
+        $("#fadeDiv").fadeOut()
+      })
+      
+      $("#slideDownButton").on("click", function(){
+        $("#slideDiv").slideDown()
+      })
+      $("#slideUpButton").on("click", function(){
+        $("#slideDiv").slideUp()
+      })
+      
+      $("#animateButton").on("click", function(){
+        $("#animateDiv").animate({          
+          fontSize: '30px'
+        }).css({
+          color: 'red'
+        })
+      })
+      
+      $("#startAnimationButton").on("click", function(){
+        $("#stopDiv").animate({          
+          fontSize: '50px'
+        }).css({
+          color: 'red'
+        })        
+      })
+      $("#stopAnimationButton").on("click", function(){
+        $("#stopDiv").stop()
+      })
+  
+      $("#callbackButton").on("click", function(){
+        $("#callbackDiv").slideToggle(2000, function(){
+          alert("슬라이드 토글 콜백")
+        })
+      })
+      
+      $("#chainingButton").on("click", function(){
+        $("#chainingDiv").slideDown(1000).slideUp(2000).fadeToggle().animate({
+          fontSize: '50px'
+        }).css({
+          color: 'red'
+        })      
+      })
+    })
+  </script>
+</body>
+</html>

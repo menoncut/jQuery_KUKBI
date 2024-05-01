@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="libs/jquery-3.7.1.min.js"></script>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+    .red {
+      background-color: red;
+    }
+    .blue{
+      background-color: blue;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .italic {
+      font-style: italic;
+    }
+    .underline {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>실습 예제</h1>
+
+  <div id="box" class="dd">
+
+  </div>
+
+  <button id="btnAddClass">addClass()</button>
+  <button id="btnRemoveClass">removeClass()</button>
+  <button id="btnToggleClass">toggleClass()</button>
+  <button id="btnCss">css()</button>
+
+  <script>
+    
+      $('#btnAddClass').click(function(){
+        alert("dd")
+        $("#box").addClass("red");
+      });
+    
+  </script>
+ 
+</body>
+</html>

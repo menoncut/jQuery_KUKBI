@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <script src="libs/jquery-3.7.1.min.js"></script>
+<head>
+  <title>jQuery 탐색 실습</title>
+   <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>jQuery 탐색 실습</h1>
+
+  <div id="container">
+    <h2>조상 탐색</h2>
+    <ul>
+      <li>항목 1</li>
+      <li>항목 2
+        <ul>
+          <li>하위 항목 1</li>
+          <li>하위 항목 2</li>
+        </ul>
+      </li>
+      <li>항목 3</li>
+    </ul>
+
+    <h2>자손 탐색</h2>
+    <div class="parent">
+      <div class="child">자손 1</div>
+      <div class="child">자손 2</div>
+      <div class="child">자손 3</div>
+    </div>
+
+    <h2>형제 탐색</h2>
+    <div class="sibling">형제 1</div>
+    <div class="sibling">형제 2</div>
+    <div class="sibling">형제 3</div>
+
+    <h2>필터링</h2>
+    <ul>
+      <li class="item">항목 1</li>
+      <li class="item">항목 2</li>
+      <li class="item">항목 3</li>
+      <li class="item">항목 4</li>
+      <li class="item">항목 5</li>
+    </ul>
+
+    <h2>eq 메소드</h2>
+    <ul>
+      <li>항목 1</li>
+      <li>항목 2</li>
+      <li>항목 3</li>
+      <li>항목 4</li>
+      <li>항목 5</li>
+    </ul>
+  </div>
+
+  <script>
+    // 문제 1: "조상 탐색" 섹션의 h2 요소의 텍스트를 출력하세요.
+    //$(function(){
+    //  $("#container").children("h2:first").css({"color":"red"})      
+    //})
+    // 문제 2: "자손 탐색" 섹션의 모든 자손 요소의 텍스트를 출력하세요.
+    //$(function(){
+    //  $(".parent").children().css({"color":"red"})      
+    //})    
+    // 문제 3: "형제 탐색" 섹션의 첫 번째 형제 요소의 텍스트를 출력하세요.
+    //$(function(){
+      //$("#container").children("h2").eq("2").siblings().eq("4").css({"color":"red"})      
+    //  $("#container").children("h2").eq("2").next().css({"color":"red"})      
+    //})
+    // 문제 4: "필터링" 섹션의 클래스가 "item"인 요소의 개수를 출력하세요.
+    //$(function(){      
+    //   let $le = $("#container").children("h2").eq("3").next().children().length;           
+    //   alert($le)
+    //    })
+    // 문제 5: "eq 메소드" 섹션의 ul 요소 중에서 index가
+    //2인 li 요소를 노란색으로 강조하세요.
+    //$(function(){      
+      //$("#container").children("h2").eq("4").next().children().eq("2").css({"color":"yellow"})
+      //  })
+        
+    // 문제 6: "eq 메소드" 섹션의 ul 요소 중에서 index가
+    //0인 li 요소의 텍스트를 출력하세요.
+    //$(function(){    
+    //  let $te = $("#container").children("h2").eq("4").next().children().eq("0").text()
+    // alert($te)
+    //    })
+                
+    // 문제 7: "eq 메소드" 섹션의 ul 요소 중에서 index가
+    //3인 li 요소의 텍스트를 "변경된 항목"으로 변경하세요.
+    //$(function(){    
+    //   $("#container").children("h2").eq("4").next().children().eq("3").text("변경된 항목")      
+    //    })
+        
+  // 문제 8: "eq 메소드" 섹션의 ul 요소 중에서 index가
+  //1인 li 요소를 삭제하세요.
+  $(function(){    
+      $("#container").children("h2").eq("4").next().children().eq("1").remove()
+      })
+  </script>
+</body>
+</html>

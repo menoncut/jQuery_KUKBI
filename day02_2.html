@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+    <style>
+        #flip, #panel, #stop{
+            padding: 5px;
+            text-align: center;
+            background-color: beige;
+            border: 1px solid #000;
+        }
+        #panel{
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery 효과</h1>
+    <p>오늘도 행복한 날입니다.</p>
+
+    <div>
+        오늘은 목요일입니다
+    </div>
+
+    <div id="div1" style="width: 80px;height: 80px; display: block;background-color:red"></div>
+    <div id="div2" style="width: 80px;height: 80px; display: block;background-color:green"></div>
+    <div id="div3" style="width: 80px;height: 80px; display: block;background-color:blue;position:absolute">HELLO</div>  
+    <div id="flip">flip</div>
+    <div id="panel">panel</div>
+    <div id="stop">stop</div>
+   
+
+    <button id="hide">숨기기</button>
+    <button id="show">나타내기</button>
+    <button id="toggle">토글</button>
+    <button id="fadein">fadein</button>
+    <button id="fadeout">fadeout</button>
+    <button id="fadetoggle">fade toggle</button>
+    <button id="anim">anim</button>
+    <button id="click">click</button>
+
+    <script>        
+        //$(document).ready(function(){
+        //    $("#anim").on("click", function(){
+        //        $("#div3").fadeToggle(2000).animate({
+        //            left: '150px',
+                    //width: '200px',
+        //            width: $("#div3").width() === 80 ? 200 : 300,
+        //            height: 'toggle',
+        //            opacity: '0.5',
+        //            fontSize: '50px'
+        //        }).css({
+        //            borderRadius: '50px'                    
+        //        })
+        //       .css({
+        //            background: 'aqua'                    
+        //        }).css({                    
+        //        })
+        //    })
+        //},'slow')
+
+        $(document).ready(function(){
+            $("#flip").on("click", function(){
+                $("#panel").slideDown(3000)
+            })
+            $("#panel").on("click", function(){
+                $(this).slideUp(3000)
+            })
+            $("#stop").on("click", function(){
+                $("#panel").stop()                
+            })
+            
+            $("#hide").on("click", function(){
+                $("p").hide("slow", function(){
+                    alert("감춤")
+                })                
+            })
+            $("#click").on("click", function(){
+                $("p").css({
+                    color: 'red'
+                }).slideUp(2000).slideDown(2000)
+            })
+        })
+        
+        
+    </script>    
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="libs/jquery-3.7.1.min.js"></script>
+  <title>제이쿼리 선택자 연습</title>
+  <style>
+    /* 스타일링을 위한 CSS 코드 */
+    p {
+      background-color: lightblue;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+    .red-text {
+      color: red;
+    }
+    .blue-text {
+      color: blue;
+    }
+    .large-text {
+      font-size: 28px;
+    }
+    .hidden {
+      display: none;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+    }
+    tr:nth-child(even) {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    $(document).ready(function(){
+      $(".highlight").css("background-color", "yellow")
+      $("#test1").css("border", "1px solid red")
+      //$("*").css("background-color", "blue")
+      $(".test").hide()
+      $('h2,div').css('color', 'blue')
+      $('p').css('color', 'blue')
+      $('p').css('font-size', '28px')
+      $("a[href]").css('color', 'yellow')
+      $('span').css('font-size', '28px')
+      $('#button3').click(function(){
+        //$('button').hide()
+        alert("경고")
+      })
+      $('tr:even').css('background-color', 'yellow')
+
+    })
+  </script>
+  <!-- <h1>제이쿼리 선택자 연습</h1>
+  
+  <h2>예제 1: 클래스 선택자</h2>
+  <p class="highlight">이 문장의 배경색을 노란색으로 변경해보세요.</p>
+  
+  <h2>예제 2: 아이디 선택자</h2>
+  <p id="test1">이 문장의 테두리를 빨간색으로 변경해보세요.</p>
+  
+  <h2>예제 3: 전체 선택자</h2>
+  <p>모든 요소의 배경색을 파란색으로 변경해보세요.</p>
+  
+  <h2>예제 4: 요소 선택자</h2>
+  <p class="test">이 문장을 숨겨보세요.</p> 
+  
+  <h2>예제 5: 가상 클래스 선택자</h2>
+  <p>마지막 문장을 숨겨보세요.</p>
+  
+  <h2>예제 6: 그룹 선택자</h2>
+  <h2>제목과 div 요소의 글자 색상을 파란색으로 변경해보세요.</h2>
+  <div>이 div 요소의 글자 색상도 파란색으로 변경되어야 합니다.</div> -->
+  
+  <h2>예제 7: 속성 선택자</h2>
+  <a href="https://www.example.com">링크 1</a>
+  <a href="https://www.example.com" target="_blank">링크 2</a>
+  <a href="#">링크 3</a>
+  <a>링크 4</a>
+  
+  <h2>예제 8: 조합 선택자</h2>
+  <p>모든 문장의 글자 색상을 파란색으로 변경하고 글꼴 크기를 28px로 설정해보세요.</p>
+  
+  <h2>예제 9: 필터 선택자</h2>
+  <span>이 요소는 모두 선택되어야 합니다.</span>
+  
+  <h2>예제 10: 기타 선택자</h2>
+  <button>버튼 1</button>
+  <button>버튼 2</button>
+  <button id="button3">버튼 3</button>
+  
+  <h2>예제 11: 테이블 선택자</h2>
+  <table>
+    <tr>
+      <th>항목 1</th>
+      <th>항목 2</th>
+      <th>항목 3</th>
+    </tr>
+    <tr>
+      <td>데이터 1</td>
+      <td>데이터 2</td>
+      <td>데이터 3</td>
+    </tr>
+    <tr>
+      <td>데이터 4</td>
+      <td>데이터 5</td>
+      <td>데이터 6</td>
+    </tr>
+  </table>
+  
+  
+</body>
+</html>

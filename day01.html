@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="test">jQuery 테스트</div>
+
+    <button>버튼 클릭하기</button>
+    <span>안녕하세요</span>
+    <p>오늘도 좋은 날입니다</p>
+
+    <script>
+        $(document).ready(function(){
+            $('#test').css('border', '1px solid blue')
+        });
+        
+        $(function(){
+            $('#test').css('border', '1px solid blue')
+        })
+
+
+
+        $(document).ready(function(){
+            $('button').click(function(){   
+                
+                $('span').css('border', '1px soild blue');
+            });
+        });
+    </script>
+</body>
+</html>

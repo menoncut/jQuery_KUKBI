@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+    <style>
+        .blue{
+            color: blue;
+            font-size: 20px;
+        }
+        .abc{
+            color: #f00;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" style="height: 100px; width: 300px; border: 1px solid #000; background-color:aqua;">
+        <p>오늘은 금요일</p>
+        <p>오늘은 토요일</p>
+        <p>오늘은 일요일</p>
+    </div>
+
+    <h1>요일 구분</h1>
+    <p>월요일</p>
+    <p>화요일</p>
+    <p id="p3">수요일</p>
+
+    <button id="btn1">아이템 삭제</button>
+    <button id="btn2">div 아이템 삭제</button>
+    <button id="btn3">css 적용</button>
+    <button id="btn4">css 적용 해제</button>
+    <button id="btn5">css 적용 토글</button>
+    <button id="btn6">css 적용 토글</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn1").on("click", function(){
+                $("p:last").remove()
+            })
+
+            //$("#btn2").on("click", function(){
+            //    $("#div1").remove()
+            //})
+
+            //$("#btn2").on("click", function(){
+            //    $("#div1").empty()
+            //})
+
+            $("#btn2").on("click", function(){
+                $("#div1 p:last").remove()
+            })
+
+            $("#btn3").on("click", function(){
+                $("#div1 p:last, h1").addClass("blue")
+            })
+
+            $("#btn4").on("click", function(){
+                $("#div1 p:last, h1").removeClass("blue")
+            })
+
+            $("#btn5").on("click", function(){
+                $("#div1 p:last, h1").toggleClass("blue")
+            })
+
+            $("#btn6").on("click", function(){
+                $("#p3").toggleClass("abc")
+            })
+        })
+    </script>
+</body>
+</html>

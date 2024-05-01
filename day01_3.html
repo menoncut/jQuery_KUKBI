@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="test">jQuery 테스트</div>
+    <h2>hello</h2>
+    <p id="test1">안녕하세요</p>
+    <p class="test">오늘도 좋은 날입니다</p>
+    <p class="test">오늘도 흐린 날입니다</p>
+    <p class="test">오늘도 비오는 날입니다</p>
+    <p>list 1</p>
+    <ul>
+        <li>커피</li>
+        <li>쥬스</li>
+        <li>오렌지</li>
+        <li>망고</li>
+        <li>키위</li>
+    </ul>
+
+    <p>list 2</p>
+    <ul>
+        <li>서울</li>
+        <li>광주</li>
+        <li>대구</li>    
+    </ul>
+
+    <p><a href="#">HTML 이동</a></p>
+    <p><a href="#" target="_blank">CSS 이동</a></p>
+<table border="1">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+    </tr>
+</table>
+
+    <button>클릭</button>
+
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                //$('h2,div').css('color', 'blue');
+                //$("ul li:first-child").css('color', 'blue')
+                //$('[href]').css('color', 'red')
+                //$('a[target="_blank"]').css('color', 'red')
+                //$("button").hide();
+                $("tr:even").css("background-color", "yellow")
+            })
+        })
+
+    </script>
+    
+</body>
+</html>

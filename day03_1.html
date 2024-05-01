@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p>오늘은 행복한 날입니다</p>
+
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+
+    <img src="cancel.png" alt="" width="100" height="100"><br>
+
+    <button id="btn1">추가 테스트</button>
+    <button id="btn2">추가 item</button>
+    <button id="btn3">컨텐츠 요소 뒤에 추가</button>
+    <button id="btn4">컨텐츠 요소 앞에 추가</button>
+    
+    <script>
+        $(Document).ready(function(){
+            //alert("btn");
+
+            //$("#btn1").on("click",function(){
+            //    $("p").append("화요일 입니다.")
+            //})
+
+            $("#btn1").on("click",function(){
+                $("p").prepend("화요일 입니다.")
+            })
+
+            $("#btn2").on("click",function(){
+                $("ul").append("<li>item4</li>")
+            })
+
+            $("#btn3").on("click",function(){
+                $("img").after("뒤에 추가")
+            })
+
+            $("#btn4").on("click",function(){
+                $("img").before("앞에 추가")
+            })            
+        })
+    </script>
+</body>
+</html>
